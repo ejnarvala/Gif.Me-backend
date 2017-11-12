@@ -13,7 +13,7 @@ router.get('/', function(req, res){
     console.log(fileName);
     download(gifUrl).then(data => {
     	fs.writeFileSync(fileName, data);
-    	exec('"../Gif.Me/C++/encode.cc"' + ' ' + message + ' ' + fileName, function(error, stdout, stderr){
+    	exec('"../Gif.Me/C++/encode"' + ' ' + message + ' ' + fileName, function(error, stdout, stderr){
     		console.log("error: " + error);
     		console.log("stdout: " + stdout);
     		console.log("stderr: " + stderr);
